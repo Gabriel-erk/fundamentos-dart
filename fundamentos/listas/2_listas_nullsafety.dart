@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 void main(List<String> args) {
   // ? = nullable (aceita null)
   // sem nada (padrão) (não aceita valores null)
@@ -10,7 +12,7 @@ void main(List<String> args) {
   // nomesNulos = ["Fulano", null]; - vai gerar um erro, pois não permite valores nulos
 
   // tem que inicializar a lista e os itens internos podem ser nulos
-  List<String?> nomesInternosAceitaNUlos = ["Fulano", null];
+  List<String?> nomesInternosAceitaNulos = ["Fulano", null];
 
   // nao precisa inicializar a lista e os itens internos podem ser nulos
   List<String?>? nomesNulosInternosAceitaNulos = null;
@@ -26,4 +28,7 @@ void main(List<String> args) {
   // Não precisa inicializar a lista e os itens internos podem ser nulos
   // Não é possivel declarar por inferência
   // var nomesNulosInternosAceitaNulosInferencia = <String?>?null;
+
+  // imprimindo pra tirar warning
+  print('$nome $nomesNulos $nomesInternosAceitaNulos $nomesNulosInternosAceitaNulos $nomeInferencia $nomesInternosAceitaNulosInferencia');
 }
