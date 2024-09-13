@@ -2,12 +2,12 @@ void main(List<String> args) {
   final nome = "fulano de tal";
 
   // pega do caracter 8 em diante (posição 8 em diante)
-  var nome_substring = nome.substring(8);
-  print(nome_substring);
+  var nomeSubstring = nome.substring(8);
+  print(nomeSubstring);
 
   // vai do caracter 0 até o 7 (da posição 0 até a 7)
-  nome_substring = nome.substring(0, 7);
-  print(nome_substring);
+  nomeSubstring = nome.substring(0, 7);
+  print(nomeSubstring);
 
   var sexo = "MASCULINO";
 
@@ -38,24 +38,31 @@ void main(List<String> args) {
   final segundoNome = 'Do tal';
 
   final saudacaoConcatenacao =
-      'Olá' + primeiroNome + ' ' + segundoNome + ' Seja bem vindo';
+      // usando interpolação corretamente
+      'Olá $primeiroNome $segundoNome Seja bem vindo';
+  // 'Olá' + primeiroNome + ' ' + segundoNome + ' Seja bem vindo';
+  print(saudacaoConcatenacao);
 
   final saudacaoInterpolocao = 'Olá $primeiroNome $segundoNome seja bem vindo';
+  print(saudacaoInterpolocao);
 
-  final saudacaoInterpolocaofuncao = 'Olá ${primeiroNome.toUpperCase()} ' +
+  final saudacaoInterpolocaofuncao = 'Olá ${primeiroNome.toUpperCase()} '
       ' ${segundoNome.toUpperCase()} Seja bem vindo ';
+  // exemplo em aula
+  // final saudacaoInterpolocaofuncao = 'Olá ${primeiroNome.toUpperCase()} ' +
+  //     ' ${segundoNome.toUpperCase()} Seja bem vindo ';
 
   print(saudacaoInterpolocaofuncao);
 
   var paciente = 'Fulano Do TAL|30 anos | Brasileiro';
 
   final dadosPacientes = paciente.split('|');
-  print('Nome: ${dadosPacientes[0]} Idade: ${dadosPacientes[1]} ' +
+  print('Nome: ${dadosPacientes[0]} Idade: ${dadosPacientes[1]} '
       '  Nacionalidade: ${dadosPacientes[2]}');
 
   paciente = 'Beltrano Santos|25 anos|Holandes ';
   dadosPacientes.addAll(paciente.split('|'));
-  print('Nome ${dadosPacientes[3]}  Idade: ${dadosPacientes[4]}' +
+  print('Nome ${dadosPacientes[3]}  Idade: ${dadosPacientes[4]}'
       ' Nacionalidade: ${dadosPacientes[5]}');
 
   // Lista de Lista
@@ -67,15 +74,15 @@ void main(List<String> args) {
   paciente = 'Sicrano de Silva|19 Anos|Alemanha';
   listaPacienciaLista.add(paciente.split('|'));
   for (var dadosPacientes in listaPacienciaLista) {
-    print('Nome ${dadosPacientes[0]} Idade:${dadosPacientes[1]}  ' +
+    print('Nome ${dadosPacientes[0]} Idade:${dadosPacientes[1]}  '
         'Nacionalidade ${dadosPacientes[2]}');
 
     print('Primeira Registro');
-    print('Nome: ${listaPacienciaLista[0][0]} ' +
-        'Idade: ${listaPacienciaLista[1][1]} ' +
-        'Nacionalidade ${listaPacienciaLista[1][2]}');
+    print('Nome: ${listaPacienciaLista[0][0]} Idade: ${listaPacienciaLista[1][1]} Nacionalidade ${listaPacienciaLista[1][2]}');
+    // print('Nome: ${listaPacienciaLista[0][0]} ' +
+    //     'Idade: ${listaPacienciaLista[1][1]} ' +
+    //     'Nacionalidade ${listaPacienciaLista[1][2]}');
 
-    print('Nome: ${listaPacienciaLista[1][0]} ' +
-        'Idade: ${listaPacienciaLista[1][1]} ' +
-        'Nacionalidade ${listaPacienciaLista[1][2]}');
+    print('Nome: ${listaPacienciaLista[1][0]} Idade: ${listaPacienciaLista[1][1]} Nacionalidade ${listaPacienciaLista[1][2]}');
+  }
 }
