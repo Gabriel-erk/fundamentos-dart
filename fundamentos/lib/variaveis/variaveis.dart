@@ -55,6 +55,7 @@ são do tipo
 Object
 */
 
+  // ignore: unused_local_variable
   Object tipoMaedasMaes;
   tipoMaedasMaes = 20;
   tipoMaedasMaes = 20.5;
