@@ -1,31 +1,29 @@
-// função para dizer olá
-// colchetes permite declara um argumento opcional posicional - se não passar o segundo parâmetro ele recebe "ola"
+// Função para dizer olá
+// Conchetes permite declara um  argumento opcional posicional
 import 'dart:io';
 
 String dizerOla(String nome, [String saudacao = "Olá"]) {
-  return '$saudacao, $nome';
+  return '$saudacao, $nome.';
 }
 
-// se saudacao não tiver um valor, terá o valo nullo
 String dizerOlaArgumentoOpcionalNulo(String nome, [String? saudacao]) {
   saudacao ??= 'Olá';
-
   return '$saudacao, $nome.';
 }
 
 void main(List<String> args) {
   var nome;
-  do {
+  do{
     print("informe o nome:");
     nome = stdin.readLineSync();
-  } while (nome == null);
+  }while(nome == null);
 
-  print("informe a saudação:");
+  print("informe a Saudação");
   var saudacao = stdin.readLineSync();
-
-  if (saudacao == null || saudacao == "") {
-    print(dizerOla(nome));
-  } else {
-    print(dizerOla(nome, saudacao));
+  
+  if(saudacao == null || saudacao == ""){
+    print( dizerOla(nome) );
+  }else{
+    print(dizerOla(nome,saudacao) );
   }
 }

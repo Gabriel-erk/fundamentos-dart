@@ -1,36 +1,37 @@
-// função com parâemetros nomeados
-// chave determina que o parametro é opcional e nomeado
+// Função com parâmetros nomeados
 import 'dart:io';
 
-void exibirMensagem(
-    {String nome = "Visitante", String mensagem = "Bem Vindo"}) {
+// Chave determina que o parametro é opcional e nomeado
+void exibirMensagem({String nome = "Visitante", String mensagem = "Bem-vindo"}) {
   print("$mensagem, $nome.");
 }
 
-void exibirMensagemPosicional(
-    [String? nome, String? mensagem = "Bem Vindo"]) {
-  print("$mensagem, ${nome ??= "Visitante"}."); // ${nome ??= "Visitante"} diz que quando o nome for nullo, passa o valor visitante para a váriavel nome
+void exibirMensagemPocional([String? nome, String mensagem = "Bem-vindo"]) {
+  print("$mensagem, ${nome ??= "Visitante"}.");
 }
 
 void main(List<String> args) {
-  print("Digite o nome do  Visitante");
+
+  print("Digite o nome do Visitante");
   var visitante = stdin.readLineSync();
 
   print("Digite a mensagem");
   var mensagem = stdin.readLineSync();
 
-  if (visitante != "" && mensagem != "") {
-    // por conta das "{}" devo chamar o nome do parâmetro a passar a váriavel do meu escopo atual que quero passar a função
-    exibirMensagem(mensagem: mensagem.toString(), nome: visitante.toString());
-    exibirMensagemPosicional(visitante!, mensagem!);
-  } else if (visitante == "" && mensagem == "") {
+  if( visitante != "" && mensagem != "" ){    
+    exibirMensagem( mensagem: mensagem!, nome: visitante.toString() );
+    exibirMensagemPocional(visitante!, mensagem);
+  }else if( visitante == "" && mensagem == ""){
     exibirMensagem();
-    exibirMensagemPosicional();
-  } else if (visitante != "" && mensagem == "") {
-    exibirMensagem(nome: visitante.toString());
-    exibirMensagemPosicional(visitante!);
-  } else if (visitante == "" && mensagem != "") {
-    exibirMensagem(mensagem: mensagem.toString());
-    exibirMensagemPosicional(null, mensagem);
+    exibirMensagemPocional();
+
+  }else if( visitante != ""){
+    exibirMensagem(nome: visitante!);
+    exibirMensagemPocional(visitante!);
+
+  }else if( mensagem != null && mensagem != ""){
+    exibirMensagem(mensagem: mensagem);
+    exibirMensagemPocional(null,mensagem);
+
   }
 }
