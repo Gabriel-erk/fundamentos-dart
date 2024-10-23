@@ -27,7 +27,7 @@ void main(List<String> args) {
 
   }else if( visitante != ""){
     exibirMensagem(nome: visitante!);
-    exibirMensagemPocional(visitante!);
+    exibirMensagemPocional(visitante);
 
   }else if( mensagem != null && mensagem != ""){
     exibirMensagem(mensagem: mensagem);
