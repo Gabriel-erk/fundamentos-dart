@@ -1,3 +1,5 @@
+import 'package:fundamentos/oo/animal/especie.dart';
+
 import 'animal.dart';
 import 'alimento.dart';
 import 'brinquedo.dart';
@@ -9,8 +11,9 @@ class Cachorro extends Animal {
   // caso apague brinquedo, o cachorro continua
   List<Brinquedo> brinquedos;
   Cachorro(String nome, double peso, this.fofura, Alimento alimento)
-      : brinquedos = [], // inicializando brinquedo, começando com a lista em branco
-        super(nome, peso, alimento);
+      : brinquedos =
+            [], // inicializando brinquedo, começando com a lista em branco
+        super(nome, peso, alimento, Especie.MAMIFERO);
   // adiciona o brinquedo passado como parâmetro na lista dde brinquedos
   void incluirBrinquedo(Brinquedo brinquedo) {
     brinquedos.add(brinquedo);
@@ -33,6 +36,6 @@ class Cachorro extends Animal {
 
   @override
   String toString() {
-    return 'Cachorro | Nome: $nome; Peso: $peso; Fofura: $fofura';
+    return 'Cachorro | Nome: $nome; Peso: $peso; Fofura: $fofura; Espécie: ${especie.name}';
   }
 }
