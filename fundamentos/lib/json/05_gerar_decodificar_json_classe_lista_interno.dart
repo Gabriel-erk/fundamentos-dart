@@ -1,4 +1,4 @@
-import 'dart:convert';
+import 'dart:convert' as conv;
 
 class Usuario {
   String nome;
@@ -44,13 +44,13 @@ void main(List<String> args) {
   //String json com um único usuário
   String jsonString = '{"nome":"Alice","idade":30,"isEstudante":false,"telefones":["1234-5678", "0987-6543"], "emails":["alic@gmail.com", "alices@gmail.com"]}';
   //COnverter a string json em um mapa
-  Map<String, dynamic> usuarioJson = jsonDecode(jsonString);
+  Map<String, dynamic> usuarioJson = conv.jsonDecode(jsonString);
   //Criar um objeto Usuario a partid do mapa
   Usuario usuario = Usuario.deJson(usuarioJson);
   //Exibir os detalhes do usuário
   print(
       '''Nome: ${usuario.nome}, Idade: ${usuario.idade}, Estudante: ${usuario.isEstudante}, Telefones: ${usuario.telefones.join(', ')}, Emails: ${usuario.emails.join(', ')}'''); // .join(', ') irá separar os elementos dentro do array por , 
   //Converter o objeto Usuario de volta para JSON =
-  String jsonSaida = jsonEncode(usuario.paraJson());
+  String jsonSaida = conv.jsonEncode(usuario.paraJson());
   print(jsonSaida);
 }

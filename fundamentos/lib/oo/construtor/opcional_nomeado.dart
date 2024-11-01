@@ -18,7 +18,7 @@ class Carro {
   }  
 
   String retornaDados(){
-    return "Fabricante: ${this.fabricante} \nmodelo: ${this.modelo}\nAno de Fabricação: ${this.anoFabricacao}\nAno do Modelo: ${this.anoModelo}\nTem ABS: ${this.temABS!?"SIM":"NÃO"}";
+    return "Fabricante: ${fabricante} \nmodelo: ${modelo}\nAno de Fabricação: ${anoFabricacao}\nAno do Modelo: ${anoModelo}\nTem ABS: ${temABS?"SIM":"NÃO"}";
   }
 
   @override
