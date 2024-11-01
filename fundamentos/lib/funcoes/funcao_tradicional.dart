@@ -7,7 +7,7 @@ int somar(int a, int b) {
 }
 
 void somarSemRetorno(int a, int b) {   
-  print("O resultado de ${a} + ${b} = ${a + b}");
+  print("O resultado de $a + $b = ${a + b}");
 }
 
 int somarComRetorno(int a, int b) { 
@@ -23,7 +23,7 @@ void main(List<String> args) {
 
   try{
     var resultado = somar(int.parse(numero1!), int.parse(numero2!));
-    print("O resultado de ${numero1} + ${numero2} = ${resultado}");
+    print("O resultado de $numero1 + $numero2 = $resultado");
   }catch(e){
     print("Número 1 ou 2 inválido");
   }

@@ -9,9 +9,10 @@ class Veterinario {
   Veterinario(this.nome);
 
   void atender(Animal animal, [Tratamento? tratamento]) {
-    if(tratamento != null)
+    if(tratamento != null) {
       print('$nome está tratando o animal ${animal.nome} com ${tratamento.descricao}');
-    else
+    } else {
       print('$nome está atendendo o animal ${animal.nome}');
+    }
   }
 }

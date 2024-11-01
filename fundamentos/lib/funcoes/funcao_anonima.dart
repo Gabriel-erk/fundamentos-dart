@@ -1,8 +1,8 @@
 void main() {
 
-  var somarAnonimo = (int a, int b) {
+  somarAnonimo(int a, int b) {
     return a + b;
-  };
+  }
 
   print("Chamando uma função anônima ${somarAnonimo(10,5)}");
   print("Chamando uma função nomeada ${somarNomeado(10,5)}");
@@ -15,11 +15,10 @@ void main() {
   //     print("Nome: ${dados[0]} Profissão: ${dados[1]}");
   // };
   // pessoas.forEach(imprimePessoa);  
-  pessoas.forEach( ( String pessoa ){
+  for (var pessoa in pessoas) {
        var dados = pessoa.split("|");
        print("${pessoas.indexOf(pessoa)+1 }º Nome: ${dados[0]} Profissão: ${dados[1]}");
    }
-  );
 
   for (var pessoa in pessoas) {
      var dados = pessoa.split("|");

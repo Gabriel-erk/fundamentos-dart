@@ -12,7 +12,7 @@ String dizerOlaArgumentoOpcionalNulo(String nome, [String? saudacao]) {
 }
 
 void main(List<String> args) {
-  var nome;
+  String? nome;
   do{
     print("informe o nome:");
     nome = stdin.readLineSync();

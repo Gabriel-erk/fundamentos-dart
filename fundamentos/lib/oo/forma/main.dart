@@ -11,5 +11,7 @@ void main(List<String> args) {
   formas.add(Circulo(10));
   formas.add(Triangulo(10,30));
 
-  formas.forEach((forma) => forma.imprimeForma());
+  for (var forma in formas) {
+    forma.imprimeForma();
+  }
 }

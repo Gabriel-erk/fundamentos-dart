@@ -15,7 +15,7 @@ void main(List<String> args) {
   List<String?> nomesInternosAceitaNulos = ["Fulano", null];
 
   // nao precisa inicializar a lista e os itens internos podem ser nulos
-  List<String?>? nomesNulosInternosAceitaNulos = null;
+  List<String?>? nomesNulosInternosAceitaNulos;
 
   /*---------------- Declaração por inferência ----------------*/
   // declarando que só vai aceitar objetos do tipo String (uma lista de objetos do tipo string, que não aceita valores nulos)
