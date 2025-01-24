@@ -5,7 +5,10 @@ class Retangulo extends Forma {
   double comprimento = 0;
   double largura = 0;
 
-  Retangulo(this.comprimento, this.largura) : super(TpForma.Retangulo);
+  Retangulo(this.comprimento, this.largura) : super(TpForma.Retangulo){
+    Forma.idFormaClasse = 2;
+    super.idFormaInstancia = 2;
+  }
 
   @override
   double calculaArea() {
