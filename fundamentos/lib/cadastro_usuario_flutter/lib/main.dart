@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:cadastro_usuario_flutter/view/tela_principal.dart';
 import 'package:flutter/material.dart';
 import 'package:cadastro_usuario_flutter/view/usuario_view.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: UsuarioView(),
+      home: TelaPrincipal(),
     );
   }
 }
