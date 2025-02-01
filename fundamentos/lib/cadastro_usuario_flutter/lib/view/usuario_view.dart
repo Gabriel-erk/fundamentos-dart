@@ -44,13 +44,18 @@ class _UsuarioViewState extends State<UsuarioView> {
       _nomeController.text = usuario.nome;
       _emailController.text = usuario.email;
       _senhaController.text = usuario.senha;
+    } else {
+      _nomeController.clear();
+      _emailController.clear();
+      _senhaController.clear();
     }
 
     showDialog(
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text(usuario == null ? 'Cadastrar Usuário' : 'Atualizar Usuário'),
+          title:
+              Text(usuario == null ? 'Cadastrar Usuário' : 'Atualizar Usuário'),
           content: Column(
             children: [
               TextField(
@@ -141,7 +146,8 @@ class _UsuarioViewState extends State<UsuarioView> {
         ],
       ),
       body: _erroMensagem.isNotEmpty // Se houver erro, mostra a mensagem
-          ? Center(child: Text(_erroMensagem, style: TextStyle(color: Colors.red)))
+          ? Center(
+              child: Text(_erroMensagem, style: TextStyle(color: Colors.red)))
           : ListView.builder(
               itemCount: _usuarios.length,
               itemBuilder: (context, index) {
@@ -154,7 +160,8 @@ class _UsuarioViewState extends State<UsuarioView> {
                     children: [
                       IconButton(
                         icon: Icon(Icons.edit),
-                        onPressed: () => _adicionarOuAtualizarUsuario(usuario: usuario),
+                        onPressed: () =>
+                            _adicionarOuAtualizarUsuario(usuario: usuario),
                       ),
                       IconButton(
                         icon: Icon(Icons.delete),
