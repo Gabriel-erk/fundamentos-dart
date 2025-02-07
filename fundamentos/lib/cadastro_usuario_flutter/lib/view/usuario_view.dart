@@ -3,6 +3,8 @@ import 'package:cadastro_usuario_flutter/controller/usuario_controller.dart';
 import 'package:cadastro_usuario_flutter/model/usuario.dart';
 
 class UsuarioView extends StatefulWidget {
+  const UsuarioView({super.key});
+
   @override
   _UsuarioViewState createState() => _UsuarioViewState();
 }
